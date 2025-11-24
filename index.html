@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8" />
     <title>Redirecting...</title>
+
+    <!-- HARD REDIRECT -->
+    <meta http-equiv="refresh" content="0; url=EcommerceApp://email-confirm" />
+
     <script>
-        // Redirect to your app deep link
-        window.location.href = "EcommerceApp://email-confirm";
+        // Backup for slow browsers
+        setTimeout(() => {
+            window.location.href = "EcommerceApp://email-confirm";
+        }, 200);
     </script>
 </head>
 
 <body>
-    <p>Redirecting to the app...</p>
+    <p>Redirecting to your app...</p>
 </body>
 
 </html>
