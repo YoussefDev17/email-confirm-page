@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Email Confirmation</title>
+    <script>
+        // Redirect to your Flutter app via deep link
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('userId');
+        const token = urlParams.get('token');
+
+        window.location.href = `EcommerceApp://email-confirm?userId=${userId}&token=${token}`;
+    </script>
+</head>
+
+<body>
+    <p>Redirecting to app...</p>
+</body>
+
+</html>
