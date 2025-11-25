@@ -2,22 +2,30 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Redirecting...</title>
 
-    <!-- HARD REDIRECT -->
-    <meta http-equiv="refresh" content="0; url=EcommerceApp://email-confirm" />
-
     <script>
-        // Backup for slow browsers
+        // Extract parameters from URL
+        const params = new URLSearchParams(window.location.search);
+        const userId = params.get("userId");
+        const token = params.get("token");
+
+        // Build deep link with parameters
+        const deepLink = `EcommerceApp://open/email-confirm?userId=${userId}&token=${token}`;
+
+        // Try opening the app
+        window.location.href = deepLink;
+
+        // As backup
         setTimeout(() => {
-            window.location.href = "EcommerceApp://email-confirm";
-        }, 200);
+            window.location.href = deepLink;
+        }, 500);
     </script>
 </head>
 
 <body>
-    <p>Redirecting to your app...</p>
+    Redirecting to your app...
 </body>
 
 </html>
